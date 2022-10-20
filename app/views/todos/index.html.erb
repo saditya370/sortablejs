@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todos</h1>
+
+<div data-controller = "drag" data-drag-url ="/todos/:id/move" id="todos" >
+  <% @todos.each do |todo| %>
+
+    <%# <%= render todo %>
+    <div data-id = "<%= todo.id%>" class= "card card-body mb-4">
+          <%=todo.description%>
+    </div>
+     
+    <p>
+      <%# <%= link_to "Show this todo", todo %> 
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New todo", new_todo_path %>
